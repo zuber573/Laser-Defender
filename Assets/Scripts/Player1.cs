@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem
+using UnityEngine.InputSystem;
 
-public class player : MonoBehaviour
-{   [SerializedFeild] float moveSpd = 5f;
-    [SerializedFeild] float paddingLeft;
-    [SerializedFeild] float paddingRight;
-    [SerializedFeild] float paddingTop'
-    [SerializedFeild] float paddingBottom;
+public class Player1 : MonoBehaviour
+{   [SerializeField] float moveSpd = 5f;
+    [SerializeField] float paddingLeft;
+    [SerializeField] float paddingRight;
+    [SerializeField] float paddingTop;
+    [SerializeField] float paddingBottom;
     Vector2 rawInput;
 
     Vector2 minBounds;
@@ -40,6 +40,6 @@ public class player : MonoBehaviour
         Vector2 newPos = new Vector2();
         newPos.x = Mathf.Clamp(transform.position.x + delta.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
         newPos.y = Mathf.Clamp(transform.position.y + delta.y, minBounds.y + paddingBottom, maxBounds.y- paddingTop);
-        transform.position += newPos;
+        transform.position = newPos;
     }
 }

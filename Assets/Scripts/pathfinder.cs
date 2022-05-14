@@ -7,21 +7,21 @@ public class pathfinder : MonoBehaviour
 {   
     EnemySpawner enemyspawner;
     waveConfigso waveConfig;
-    List<Transform> wayoints;
+    List<Transform> waypoints;
     int waypointIndex = 0;
     
     
     void Awake()
     {
-        enemyspawner = FindObjectType<EnemySpawner>();
+        enemyspawner = FindObjectOfType<EnemySpawner>();
 
     }
     
     void Start()
     {   
         waveConfig = enemyspawner.GetCurrentWave();
-        waypoints - waveConfig.GetWaypoints();
-        transform.position = waypoints[waypointIndex.position;
+        waypoints = waveConfig.GetWaypoints();
+        transform.position = waypoints[waypointIndex].position;
     }
 
    
